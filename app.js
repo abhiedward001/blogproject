@@ -3,6 +3,7 @@ var express=require("express"),
     bodyparser=require("body-parser"),
     mongoose=require("mongoose");
   
+var port = 4000 || process.env.port;
 var methodOverride=require("method-override");
 // App configuration  
 
@@ -130,6 +131,6 @@ app.delete("/blog/:id",function(req,res){
     });
 });
 
-app.listen(4000,function(req,res){
+app.listen(port,function(req,res){
     console.log("someone started the server");
 });
