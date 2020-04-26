@@ -51,7 +51,7 @@ var Blog=mongoose.model("Blog",blogschema); //model
 
 // Routes routes
 app.get("/",(req,res)=>{
-    res.redirect("/blog");
+    res.send('testing')
 })
 // index
 app.get("/blog",(req,res)=>{
