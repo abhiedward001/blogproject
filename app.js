@@ -3,7 +3,7 @@ var express=require("express"),
     bodyparser=require("body-parser"),
     mongoose=require("mongoose");
   
-var port = 4000 || process.env.port;
+var port = 4000 || process.env.PORT;
 var methodOverride=require("method-override");
 // App configuration  
 
@@ -51,9 +51,9 @@ var Blog=mongoose.model("Blog",blogschema); //model
 
 // Routes routes
 app.get("/",(req,res)=>{
-    res.send('testing')
+    res.redirect("/blog");
 })
-// index
+// indexa
 app.get("/blog",(req,res)=>{
     Blog.find({},function(err,data){
         if(err){
