@@ -1,0 +1,40 @@
+<%- include("partials/header") %>
+
+<div class="ui main text container" style="margin-top: 10em;">
+    <div class="ui huge header">Restful blog app</div>
+    <div class="ui top attached segment">
+        <div class="ui divided items">
+            <% blog.forEach(function(blogdata){ %>
+
+
+                <div  class="item">
+                    <div class="image">
+                        <img src="<%= blogdata.image%>">
+                    </div>
+                    <div class="content">
+                        <a class="header" href="/blog/<%= blogdata._id%>"><%=blogdata.title%></a>
+
+                    <div class="meta">
+                        <span>
+                            <%= blogdata.created.toDateString()%>
+                        </span>
+                    </div>
+                    <div class="description">
+                        <%=blogdata.body.substring(0,100)%>......
+                    </div>
+                    <div class="extras">
+                        <a class="ui floated basic violet button" href="/blog/<%= blogdata._id%>">
+                        Read More<i class="right chevron icon"></i>
+                        </a>
+                    </div>
+                    </div>
+                   
+                </div>
+                <% })%>
+        </div>
+    </div>
+</div>
+
+
+
+<%- include("partials/footer") %>
