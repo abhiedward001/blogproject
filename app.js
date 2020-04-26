@@ -4,7 +4,7 @@ var express=require("express"),
     mongoose=require("mongoose");
     
   
-
+var port = 8000 || process.env.PORT;
 var methodOverride=require("method-override");
 // App configuration  
 
@@ -52,7 +52,7 @@ var Blog=mongoose.model("Blog",blogschema); //model
 
 // Routes routes
 app.get("/",(req,res)=>{
-   console.log("heroku rocks");
+  res.render("heroku rocks");
 })
 // indexa
 app.get("/blog",(req,res)=>{
@@ -132,4 +132,6 @@ app.delete("/blog/:id",function(req,res){
     });
 });
 
-
+app.listen(port,function(req,res){
+    console.log("someone started the server");
+});
