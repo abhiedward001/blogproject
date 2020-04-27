@@ -4,7 +4,7 @@ var express=require("express"),
     mongoose=require("mongoose");
     
   
-var port = 8000 || process.env.PORT;
+var port = process.env.PORT || 5000;
 var methodOverride=require("method-override");
 // App configuration  
 
